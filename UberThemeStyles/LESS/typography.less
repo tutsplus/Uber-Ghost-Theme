@@ -1,0 +1,171 @@
+//**
+// Mixins
+//**
+
+.HeaderFont () {
+	font-family: @header_font;
+	line-height: 1.313em;
+	font-weight: 400;
+}
+
+//**
+// Styles
+//**
+
+body {
+ 	.BodyColor;
+	margin: 0;
+	font-family: @default_font;
+ 	line-height: @golden + 0em; //set the regular line height to the golden ratio
+ 	font-weight: 300;
+}
+
+a {
+    background: transparent;
+}
+
+a:link, a:visited {
+    .LinkColor;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    .LinkHoverColor;
+    outline: 0;
+}
+
+// Classic typographic scale: if default 16px total size scale would be:
+// 9px, 10px, 11px, 12px, 16px, 18px, 21px, 24px, 36px, 48px, 60px, 72px
+
+h1 {
+  .HeaderFont;
+  font-size: 3em;
+  margin: 0.563em 0;
+}
+
+h2 {
+  .HeaderFont;
+  font-size: 2.25em;
+  margin: 0.625em 0;
+}
+
+h3 {
+  .HeaderFont;
+  font-size: 1.5em;
+  margin: 1.313em 0;
+}
+
+h4 {
+  .HeaderFont;
+  font-size: 1.313em;
+  margin: 1.313em 0;
+}
+
+h5 {
+  .HeaderFont;
+  font-size: 1.125em;
+  margin: 1.313em 0;
+}
+
+h6 {
+  .HeaderFont;
+  font-size: 1em;
+  margin: 0.75em 0;
+}
+
+blockquote {
+  .BlockquoteColor;
+  margin: 1.563rem 0;
+  padding: 1.250rem;
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+h1.blogtitle_uber, h1.blogtitle_uber a {
+  font-size: 4.5rem;
+  margin: 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+h2.blogdescription_uber, h2.blogdescription_uber a {
+  font-size: 1.313rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+h1.posttitle_uber {
+  .PostTitleColor;
+  font-weight: 700;
+  position: relative;
+  margin-left: -@posttitle_overflow + 0rem;
+  margin-right: -@posttitle_overflow + 0rem;
+  padding: @golden / 2 + 0rem @posttitle_overflow + 0rem;
+}
+
+.date_uber {
+  .DateColor;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: inline-block;
+  text-align: center;
+  padding: @golden / 3 + 0em @golden + 0em;
+  position: relative;
+  top: -@golden - 0.25em;
+}
+
+//**
+// Icon fonts
+//**
+
+@font-face {
+    font-family: 'icons';
+    src:url('../fonts/icons.eot');
+    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/icons.woff') format('woff'),
+        url('../fonts/icons.ttf') format('truetype'),
+        url('../fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-ghost:before, .icon-rss:before, .icon-twitter:before, .icon-gplus:before, .icon-facebook:before {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+}
+
+.icon-twitter:before {
+    content: "\e002";
+    font-size: 1.1em;
+    margin-right: 1em;
+}
+.icon-gplus:before {
+    content: "\e003";
+    margin-right: 1em;
+}
+.icon-facebook:before {
+    content: "\e004";
+    margin-right: 1em;
+}
+.icon-rss:before {
+    content: "\e001";
+}
+.icon-ghost:before {
+    content: "\e000";
+    margin-right: 0.5em;
+}
+
+.hidethis_uber {
+  display: none;
+}

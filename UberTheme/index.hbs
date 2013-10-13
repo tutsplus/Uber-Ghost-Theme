@@ -1,0 +1,26 @@
+{{!< default}}
+{{> header}}
+<main class="main_uber" role="main">
+{{#foreach posts}}
+<article class="article_uber" role="article" itemscope itemtype="http://schema.org/Article">
+<header class="postheader_uber">
+<time class="date_uber" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">{{date format='dddd DD MMM YYYY'}}</time>
+<h1 class="posttitle_uber" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h1>
+</header>
+<div class="postcontent_uber" itemprop="articleBody">
+{{content}}
+</div>
+{{#if tags}}
+<div class="posttags_uber">
+Tags: {{tags separator=" | "}}
+</div>
+{{/if}}
+</article>
+{{/foreach}}
+{{#if pagination}}
+<div class="pagination_uber">
+{{{pagination}}}
+</div>
+{{/if}}
+</main>
+{{> footer}}
