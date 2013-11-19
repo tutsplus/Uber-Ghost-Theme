@@ -9,15 +9,10 @@ module.exports = function(grunt) {
       less: {
         files: [
         'LESS/*',
-        'bower_components/normalize-css/normalize.css'
+        '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/*',
+        '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/partials/*'
         ],
         tasks: ['less']
-      },
-      css: {
-        files: [
-        'compiled_css/*'
-        ],
-        tasks: ['cssmin']
       }
     },
 
@@ -39,7 +34,7 @@ module.exports = function(grunt) {
     less: {
       components: {
         files: {
-          'compiled_css/compiled_css.css': ['LESS/less_imports.less']
+          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/css/style.css': ['LESS/less_imports.less']
         }
       },
       options: {
@@ -51,15 +46,7 @@ module.exports = function(grunt) {
       }
     },
 
-    cssmin: {
-      combine: {
-        files: {
-          '<%= ghost_location %>content/themes/<%= ghost_theme_name %>/assets/css/style.css': ['bower_components/normalize-css/normalize.css', 'compiled_css/compiled_css.css']
-        }
-      }
-    },
-
-    'ghost_location': '../Ghost/',
+    'ghost_location': '../ghost-0.3.2/',
     'ghost_theme_name': 'UberTheme',
 
   });
